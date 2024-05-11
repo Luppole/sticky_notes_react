@@ -5,6 +5,7 @@
     display: flex; /* Add this line */
     flex-direction: column; /* Add this line */
     align-items: center; /* Add this line */
+    
 }
   .form label {
     display: block;
