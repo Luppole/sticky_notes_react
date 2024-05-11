@@ -9,8 +9,6 @@ function App() {
     <main>
       <Post author="Itamar" body="Learning ReactJS" />
       <Post author="Yaniv" body="The Course Isn't Boring"/>
-      <Post />
-      <Post />
     </main>
   );
 }
