@@ -7,8 +7,8 @@ import Post from "./components/Post"
 function App() {
   return (
     <main>
-      <Post />
-      <Post />
+      <Post author="Itamar" body="Learning ReactJS" />
+      <Post author="Yaniv" body="The Course Isn't Boring"/>
       <Post />
       <Post />
     </main>
