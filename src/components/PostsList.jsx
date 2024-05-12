@@ -9,7 +9,7 @@ function PostsList({ isPosting, onStopPosting }) {
     
     useEffect(() => {
         async function fetchPosts() {
-            const response = await fetch('http://localhost:8080/posts')
+            const response = await fetch('http://192.168.56.1:8080/posts')
             const resData = await response.json();
             setPosts(resData.posts);
         }
@@ -18,7 +18,7 @@ function PostsList({ isPosting, onStopPosting }) {
     }, []);
 
     function addPostHandler(postData) {
-        fetch('http://localhost:8080/posts', {
+        fetch('http://192.168.56.1:8080/posts', {
             method: 'POST',
             body: JSON.stringify(postData),
             headers: {
