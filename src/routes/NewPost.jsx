@@ -3,7 +3,7 @@ import classes from './NewPost.module.css';
 import Modal from '../components/Modal';
 import { Link } from 'react-router-dom';
 
-function NewPost({ onAddPost }) {
+function NewPost() {
   const [enteredBody, setEnteredBody] = useState('');
   const [enteredAuthor, setEnteredAuthor] = useState('');
 
@@ -21,7 +21,14 @@ function NewPost({ onAddPost }) {
         body: enteredBody,
         author: enteredAuthor
     };
-    
+    fetch('http://localhost:808/posts', {
+        method: 'POST',
+        body: JSON.stringify(postData),
+        headers: {
+            'Content-Type': 'application/json'
+        },
+    });
+
     onAddPost(postData);
     onCancel(); // This will close the modal
   }
