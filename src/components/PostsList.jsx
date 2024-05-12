@@ -6,6 +6,7 @@ import NewPost from "./NewPost";
 
 function PostsList({ isPosting, onStopPosting }) {
     const [posts, setPosts] = useState([]);
+    
     useEffect(() => {
         async function fetchPosts() {
             const response = await fetch('http://localhost:8080/posts')
