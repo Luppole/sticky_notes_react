@@ -2,21 +2,26 @@ import { useState } from 'react';
 import classes from './NewPost.module.css';
 
 function NewPost({ onCancel }) {
+  const [enteredBody, setEnteredBody] = useState('');
+  const [enteredAuthor, setEnteredAuthor] = useState('');
+
   function bodyChangeHandler(event) {
-    onBodyChange(event.target.value);
+    setEnteredBody(event.target.value);
   }
 
   function authorChangeHandler(event) {
-    onAuthorChange(event.target.value);
+    setEnteredAuthor(event.target.value);
   }
 
   function submitHandler(event) {
     event.preventDefault();
     const postData = {
-      body: enteredBody,
-      author: enteredAuthor
+        body: enteredBody,
+        author: enteredAuthor
     };
-    onCancel();
+    console.log(postData);
+    // You might want to do something with postData here, like sending it to a server
+    onCancel(); // This will close the modal
   }
 
   return (
@@ -30,8 +35,8 @@ function NewPost({ onCancel }) {
         <input type="text" id="name" required onChange={authorChangeHandler}/>
       </p>
       <p className={classes.actions}>
-        <button type="button" onClick={onCancel}>Cancel</button>
-        <button>Submit</button>
+        <button type="button" onClick={onCancel}> Cancel</button>
+        <button> Submit</button>
       </p>
     </form>
   );
