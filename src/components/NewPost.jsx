@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import classes from './NewPost.module.css';
 
-function NewPost({ onCancel }) {
+function NewPost({ onCancel, onAddPost }) {
   const [enteredBody, setEnteredBody] = useState('');
   const [enteredAuthor, setEnteredAuthor] = useState('');
 
@@ -19,8 +19,8 @@ function NewPost({ onCancel }) {
         body: enteredBody,
         author: enteredAuthor
     };
-    console.log(postData);
-    // You might want to do something with postData here, like sending it to a server
+    
+    onAddPost(postData);
     onCancel(); // This will close the modal
   }
 
