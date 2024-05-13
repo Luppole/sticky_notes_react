@@ -14,6 +14,12 @@ function MainHeader() {
           <MdPostAdd size={18} />
           New Post
         </Link>
+
+        <Link to="/login-dialog" className={classes.button}>
+          <MdPostAdd size={18} />
+          Login
+        </Link>
+
       </p>
     </header>
   );
